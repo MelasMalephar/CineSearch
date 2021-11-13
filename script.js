@@ -91,6 +91,7 @@ async function Upcom() {
       id = await Upcom();
     }
   }
+  console.log(id);
   var index = 0;
   var count = 0;
   var a;
@@ -98,13 +99,10 @@ async function Upcom() {
     while (index < 9 || a < 5 ) {
     var a = index+count;
     console.log(a);
-      if(val == 0)
-      {idd = id[a]["id"] ;}
-      else {
-        idd = id[a];
-      }
+      if(val == 1) idd= id[a];
+      else idd = id[a]["id"] ;
       idd = idd.substring(7, 16);
-      console.log(idd);
+      // console.log(idd);
       var str = "https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=";
       str += idd;
       const response  = await fetch(str, {
@@ -119,10 +117,8 @@ async function Upcom() {
     if(dt["title"]["titleType"]=="movie"){
       index+=1;
       try {
-        if(val == 0){
-        document.getElementById('a'+(index)).href  = "https://www.imdb.com/"+id[a]["id"];}
-        else {
-        document.getElementById('a'+(index)).href  = "https://www.imdb.com/"+id[a]}
+        if(val != 1){document.getElementById('a'+(index)).href  = "https://www.imdb.com/title/"+idd}
+        else { document.getElementById('a'+(index)).href  = "https://www.imdb.com/title/"+idd}
         document.getElementById('t'+(index)).textContent = dt["title"]["title"]
         document.getElementById('r'+ (index)).textContent = dt["ratings"]["rating"]
         document.getElementById('g'+ (index)).textContent = dt["genres"][0]+ " " + (dt["genres"][1] ? ", " + dt["genres"][1]:"  ")
@@ -139,7 +135,7 @@ async function Upcom() {
 }
 
 
-//window.addEventListener("load",   details(1))
+// window.addEventListener("load",   details(1))
 
 
 
