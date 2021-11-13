@@ -135,7 +135,7 @@ async function Upcom() {
 }
 
 
-// window.addEventListener("load",   details(1))
+window.addEventListener("load",   details(1))
 
 
 
