@@ -6,7 +6,7 @@ async function load() {
   	"method": "GET",
   	"headers": {
   		"x-rapidapi-host": "imdb8.p.rapidapi.com",
-  		"x-rapidapi-key": "01aa8e97aemsh225de66ae41be67p18cc8bjsna54c3d59a7a3"
+  		"x-rapidapi-key": "375b2246aamsh93066013e6969ddp19b88ejsn3c709bc72951"//"01aa8e97aemsh225de66ae41be67p18cc8bjsna54c3d59a7a3"
   	}});
       const response_2 = await response.json();
       var index = 0;
@@ -44,7 +44,7 @@ async function TopR() {
       	"method": "GET",
       	"headers": {
       		"x-rapidapi-host": "imdb8.p.rapidapi.com",
-      		"x-rapidapi-key": "01aa8e97aemsh225de66ae41be67p18cc8bjsna54c3d59a7a3"
+      		"x-rapidapi-key":"375b2246aamsh93066013e6969ddp19b88ejsn3c709bc72951"// "01aa8e97aemsh225de66ae41be67p18cc8bjsna54c3d59a7a3"
       	}
       });
       const response_1 = await response.json();
@@ -57,7 +57,7 @@ async function TopR() {
 	          "method": "GET",
 	          "headers": {
 		        "x-rapidapi-host": "imdb8.p.rapidapi.com",
-		        "x-rapidapi-key": "01aa8e97aemsh225de66ae41be67p18cc8bjsna54c3d59a7a3"
+		        "x-rapidapi-key": "375b2246aamsh93066013e6969ddp19b88ejsn3c709bc72951"//"01aa8e97aemsh225de66ae41be67p18cc8bjsna54c3d59a7a3"
           	}
           });
           const response_3 = await response.json();
@@ -70,7 +70,7 @@ async function Upcom() {
 	          "method": "GET",
 	          "headers": {
 		        "x-rapidapi-host": "imdb8.p.rapidapi.com",
-		        "x-rapidapi-key": "01aa8e97aemsh225de66ae41be67p18cc8bjsna54c3d59a7a3"//"375b2246aamsh93066013e6969ddp19b88ejsn3c709bc72951"
+		        "x-rapidapi-key":"375b2246aamsh93066013e6969ddp19b88ejsn3c709bc72951" //"01aa8e97aemsh225de66ae41be67p18cc8bjsna54c3d59a7a3
           	}
           });
           const response_4 = await response.json();
@@ -110,7 +110,7 @@ async function Upcom() {
     	"headers": {
     		"x-rapidapi-host": "imdb8.p.rapidapi.com",
         //"x-rapidapi-key": "42b335afe4msh059047f6dd934fcp1ae100jsnd461e06d483c"
-    		"x-rapidapi-key": "01aa8e97aemsh225de66ae41be67p18cc8bjsna54c3d59a7a3"//"37497024c5msh312b4129e555d7ep143315jsn5e0b10be98bc"
+    		"x-rapidapi-key": "37497024c5msh312b4129e555d7ep143315jsn5e0b10be98bc"
     	}
     });
     const dt = await response.json();
@@ -134,8 +134,8 @@ async function Upcom() {
       }
 }
 
-
-window.addEventListener("load",   details(1))
+details(1);
+// window.addEventListener("load",   details(1))
 
 
 
