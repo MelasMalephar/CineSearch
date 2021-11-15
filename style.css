@@ -30,10 +30,11 @@ align-items: center;
 
     }
 
-    section a {  text-decoration: none;
-         grid-auto-rows: 1fr
-           margin-top: 0.1rem;
-           grid-column-end: span 3;
+    section a {
+    text-decoration: none;
+    grid-auto-rows: 1fr;
+    grid-column-end: span 3;
+    margin-top: 0.1rem;
        }
 /*     div {
       overflow-wrap: break-word;
@@ -43,12 +44,11 @@ align-items: center;
       color: black;
       font-size: 16px;
       margin-left: 30%;
-      background: grey;
+      text-decoration: none;
     }
 
 p{
   font-weight: 800;
-padding: 0.2rem;
 width: 100%;
 }
     .navlist {
@@ -155,8 +155,8 @@ main {
 }
 
 .card-content {
-  padding: 15px;
-  margin: 1rem;
+  /* padding: 15px; */
+  margin: 2rem;
   height: 5rem;
 }
 
@@ -166,7 +166,8 @@ main {
 
 .rating{
   align-self: baseline;
-  padding-left: 0.2px;
+  margin-left: 2rem;
+  width: 1rem;
 }
 
 
@@ -175,6 +176,8 @@ img{
   width: 100%;
   height: 20em;
 }
+
+ footer p{ background: yellowgreen;}
 
 @media only screen and (max-width: 1000px) {
   a {
@@ -192,9 +195,3 @@ img{
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 1rem;
   }
-
-  footer a{
-  text-decoration: none;
-  color: inherit;
-
-}
