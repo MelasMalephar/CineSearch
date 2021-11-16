@@ -1,3 +1,10 @@
+api = {"method": "GET",
+          "headers": {
+            "x-rapidapi-host": "imdb8.p.rapidapi.com",
+            // "x-rapidapi-key": "42b335afe4msh059047f6dd934fcp1ae100jsnd461e06d483c"//"01aa8e97aemsh225de66ae41be67p18cc8bjsna54c3d59a7a3"
+            "x-rapidapi-key": "375b2246aamsh93066013e6969ddp19b88ejsn3c709bc72951"
+          }}
+
  function load() {
   var txt = document.querySelector('#Movie-name').value;
   if(txt=='') return 0;
@@ -8,39 +15,21 @@
 
 async function TopR() {
         const response  = await fetch(
-        'https://imdb8.p.rapidapi.com/title/get-top-rated-movies', {
-      	"method": "GET",
-      	"headers": {
-      		"x-rapidapi-host": "imdb8.p.rapidapi.com",
-      		"x-rapidapi-key":"375b2246aamsh93066013e6969ddp19b88ejsn3c709bc72951"// "01aa8e97aemsh225de66ae41be67p18cc8bjsna54c3d59a7a3"
-      	}
-      });
+        'https://imdb8.p.rapidapi.com/title/get-top-rated-movies', api);
       const response_1 = await response.json();
      return response_1;
 
     }
 
   async function MostP() {
-            const response  = await fetch("https://imdb8.p.rapidapi.com/title/get-most-popular-movies", {
-	          "method": "GET",
-	          "headers": {
-		        "x-rapidapi-host": "imdb8.p.rapidapi.com",
-		        "x-rapidapi-key": "375b2246aamsh93066013e6969ddp19b88ejsn3c709bc72951"//"01aa8e97aemsh225de66ae41be67p18cc8bjsna54c3d59a7a3"
-          	}
-          });
+          const response  = await fetch("https://imdb8.p.rapidapi.com/title/get-most-popular-movies", api);
           const response_3 = await response.json();
          return response_3;
 
         }
 
 async function Upcom() {
-            const response  = await fetch("https://imdb8.p.rapidapi.com/title/get-coming-soon-movies", {
-	          "method": "GET",
-	          "headers": {
-		        "x-rapidapi-host": "imdb8.p.rapidapi.com",
-		        "x-rapidapi-key":"375b2246aamsh93066013e6969ddp19b88ejsn3c709bc72951" //"01aa8e97aemsh225de66ae41be67p18cc8bjsna54c3d59a7a3
-          	}
-          });
+            const response  = await fetch("https://imdb8.p.rapidapi.com/title/get-coming-soon-movies", api);
           const response_4 = await response.json();
          return response_4;
 
@@ -67,12 +56,7 @@ async function Upcom() {
       console.log(idd);
       var str = "https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=";
       str += idd;
-      const response  = await fetch(str, {"method": "GET",
-              	"headers": {
-              		"x-rapidapi-host": "imdb8.p.rapidapi.com",
-                  "x-rapidapi-key": "42b335afe4msh059047f6dd934fcp1ae100jsnd461e06d483c"
-              		// "x-rapidapi-key": "37497024c5msh312b4129e555d7ep143315jsn5e0b10be98bc"
-              	}});
+      const response  = await fetch(str, api);
       const dt = await response.json();
       str ='';
       ct=ct+1;
@@ -80,7 +64,7 @@ async function Upcom() {
       {
         index+=1;
         let add=`
-              <a  href="https://www.imdb.com${idd}" target="_blank">
+              <a  href="https://www.imdb.com/${idd}" target="_blank">
               <div class="new-card">
               <div class="image">
               <img  src="${dt["title"]["image"]["url"]}" alt="Movie id"/>
@@ -103,7 +87,7 @@ async function Upcom() {
 }
 
 
-details(1);
+details(0);
 // window.addEventListener("load",   details(1))
 
 

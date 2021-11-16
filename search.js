@@ -1,21 +1,24 @@
+api = {"method": "GET",
+          "headers": {
+            "x-rapidapi-host": "imdb8.p.rapidapi.com",
+            // "x-rapidapi-key": "42b335afe4msh059047f6dd934fcp1ae100jsnd461e06d483c"//"01aa8e97aemsh225de66ae41be67p18cc8bjsna54c3d59a7a3"
+            "x-rapidapi-key": "375b2246aamsh93066013e6969ddp19b88ejsn3c709bc72951"
+          }}
+
 async function dat() {
   var str = "https://imdb8.p.rapidapi.com/title/find?q=";
   var txt = sessionStorage.getItem('text');
   str += txt;
-        const response  = await fetch( str  , {
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-host": "imdb8.p.rapidapi.com",
-      "x-rapidapi-key": "42b335afe4msh059047f6dd934fcp1ae100jsnd461e06d483c"//375b2246aamsh93066013e6969ddp19b88ejsn3c709bc72951"//"01aa8e97aemsh225de66ae41be67p18cc8bjsna54c3d59a7a3"
-    }});
-      let response_2 = await response.json();
+  const response  = await fetch( str  , api);
+  let response_2 = await response.json();
+  var a = document.getElementById('core')
+  if(response_2==undefined){ alert("No Movie Found");}
   try {
   let movieId = response_2["results"]
   var i=0
   console.log(movieId);
   objectLenght = Object.keys(movieId).length;
   console.log(objectLenght);
-  var a = document.getElementById('core')
   a.innerHTML =`  <!-- code will be added here -->`;
   while(i<objectLenght)
   {
@@ -43,6 +46,8 @@ async function dat() {
 }
 }catch (e) {
   console.error(e);
+  alert("No Movie Found!!!");
+  window.location="\index.html";
 }
 finally {
   let button= `
