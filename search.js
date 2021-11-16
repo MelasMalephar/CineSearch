@@ -46,7 +46,7 @@ async function dat() {
 }
 finally {
   let button= `
-          <a href="index1.html">
+          <a href="index.html">
           <img id="image" src="return.jpg" alt=return></a>
           `;
       a.innerHTML +=button;
