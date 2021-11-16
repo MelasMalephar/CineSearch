@@ -15,7 +15,12 @@ align-items: center;
     height: auto;
     position: relative;
     float: left;
-    }
+    margin: 8%;
+    transition: all 0.2s ease 0s;
+}
+
+#image:hover {
+  background-color: orange;}
 
   .nav {
       display: flex;
@@ -31,6 +36,25 @@ align-items: center;
       list-style: none;
 
     }
+
+  /* .LoadMore{
+    border: 2px solid rgb(166, 233, 41);
+    border-radius: 50%;
+    margin-top: 10rem;
+    width: 6rem;
+    height: 6rem;
+    background-color: lightgreen;
+    transition: all 0.2s ease 0s;
+    background-image: url("./add.png");
+    background-blend-mode: multiply;
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+
+  .LoadMore:hover {
+    background-color: orange;
+  } */
 
     section a {
     text-decoration: none;
@@ -74,7 +98,7 @@ width: 100%;
 
     /* body */
     body {
-      background-image: url("popcorn.jpg");
+      background-image: url("./popcorn.jpg");
       background-position: top center;
       background-size: cover;
     }

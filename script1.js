@@ -1,5 +1,6 @@
  function load() {
   var txt = document.querySelector('#Movie-name').value;
+  if(txt=='') return 0;
      sessionStorage.setItem('text', txt)
       window.location = 'search.html';
   }
@@ -53,16 +54,17 @@ async function Upcom() {
       if(val == 1) {id = await MostP(); }
       else {id = await Upcom();}
          }
-
+    try{
     var index = 0;
-    var ct=0;
+    var ct=0,limit=10;
     var idd;
-    console.log(id);
-    while (index < 10 )
-    { console.log(ct);
-      if(val == 1) {idd= id[ct+index];}
-      else idd = id[ct+index]["id"] ;
+        var a = document.getElementById('cott')
+      a.innerHTML = `<!-- Nothing here-->`;
+    while (index < limit )
+    { if(val == 1) {idd= id[ct+index];}
+      else {idd = id[ct+index]["id"] ;}
       idd = idd.substring(7, 16);
+      console.log(idd);
       var str = "https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=";
       str += idd;
       const response  = await fetch(str, {"method": "GET",
@@ -72,7 +74,8 @@ async function Upcom() {
               		// "x-rapidapi-key": "37497024c5msh312b4129e555d7ep143315jsn5e0b10be98bc"
               	}});
       const dt = await response.json();
-      console.log(dt);
+      str ='';
+      ct=ct+1;
       if(dt["title"]["titleType"]=="movie")
       {
         index+=1;
@@ -91,21 +94,22 @@ async function Upcom() {
               </div>
               </div>
               </div></a>`;
-        var a = document.getElementById('cott')
         a.innerHTML += add;
         add =''
-      }
-      else {ct++;}
-    }
+      }}
+  }catch (e) {
+    console.error(e);
+  }
 }
 
 
-// details(1);
+details(1);
 // window.addEventListener("load",   details(1))
 
 
+
 var Dropdown = document.getElementById("option")
- Dropdown.addEventListener("change", function (f) {
+ Dropdown.addEventListener("change", function () {
    if(Dropdown.value == "Popular"){
    var c = details(1); }
    else if (Dropdown.value == "Top Rated") { console.log("Top Rated");
